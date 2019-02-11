@@ -7,7 +7,7 @@ export default class Product extends React.Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
-      <ProductWrappper className='col-9 mx-auto col-md-6 col-lg-3 my-3'>
+      <ProductWrapper className='col-9 mx-auto col-md-6 col-lg-3 my-3'>
         <div className="card">
           <div className="img-container p-5" onClick={() => console.log('click on img container')}>
             <Link to='/details'>
@@ -29,13 +29,13 @@ export default class Product extends React.Component {
             </h5>
           </div>
         </div>
-      </ProductWrappper>
+      </ProductWrapper>
     );
   }
 }
 
 
-const ProductWrappper = styled.div`
+const ProductWrapper = styled.div`
   .card{
     border-color: transparent;
     transition  : all 1s linear;
