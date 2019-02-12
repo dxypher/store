@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-// import  { ProductConsumer } from '../context'
+import  { ProductConsumer } from '../Context';
+import PropTypes from 'prop-types';
+
 
 export default class Product extends React.Component {
   render() {
@@ -32,6 +34,16 @@ export default class Product extends React.Component {
       </ProductWrapper>
     );
   }
+}
+
+Product.propTypes = {
+  product: PropTypes.shape({
+    id    : PropTypes.number,
+    img   : PropTypes.string,
+    title : PropTypes.string,
+    price : PropTypes.number,
+    inCart: PropTypes.boolean
+  }).isRequired
 }
 
 
