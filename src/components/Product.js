@@ -13,12 +13,14 @@ export default class Product extends React.Component {
         <div className="card">
           <ProductConsumer>
             { (value) => (
-              <div className="img-container p-5" onClick={() => value.handleDetail(id)}>
+              <div className="img-container p-5" 
+                onClick={() => value.handleDetail(id)}>
                 <Link to='/details'>
                   <img src={img} alt="product" className='card-img-top' />
                 </Link>
-
-                <button className='cart-btn' disabled={inCart ? true : false} onClick={() => { value.addToCart(id) }}>
+                <button className='cart-btn' disabled={inCart ? true : false} 
+                  onClick={() => { value.addToCart(id);
+                                   value.openModal(id); }}>
                   {inCart ? (<p className='text-capitalize mb-0' disabled>In Cart</p>) : (<i className='fas fa-cart-plus' />)}
                 </button>
               </div>
